@@ -72,7 +72,7 @@ php artisan migrate:fresh --seed
 
 php artisan serve
 
-go to 127.0.0.1:8000/panel/login/*
+go to 127.0.0.1:8000/panel/login
 
 email: admin@gmail.com
 password: 123456
