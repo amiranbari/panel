@@ -73,7 +73,7 @@ Add these seeders call in `DatabaseSeeder.php`:
 	$this->call(Panel_PermissionSeeder::class);
 ```
 
-- `php artisan migrate:fresh --seed`
+- `php artisan migrate --seed`
   
 - `php artisan serve`
 
