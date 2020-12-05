@@ -7,6 +7,8 @@ Documentation can be found here: https://amiranbari.github.io/panel/
 
 3) Run: `php artisan vendor:publish` - Then select 1.
 
+4) Chang locale to `fa` in `config/app.php`
+
 #### Laravel 8 
 Put this in `User.php` in Models directory
 
@@ -16,8 +18,6 @@ In User class:
 `use HasFactory, Notifiable, HasRoles;`
 
 Add `level` to `fillable` fields.
-
-Chang locale to `fa` in `config/app.php`
 
 Change `composer.json` autoload section like below"
 ```
