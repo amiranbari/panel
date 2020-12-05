@@ -1,24 +1,40 @@
-See Document here: https://amiranbari.github.io/panel/
+Documentation can be found here: https://amiranbari.github.io/panel/
 
-config your database in .env
+1) Config your database in .env.
 
-run composer require amiranbari/panel:dev-master
+2) Run:
+`composer require amiranbari/panel:dev-master`
 
-run php artisan vendor:publish - then insert 1 and enter
+3) Run: `php artisan vendor:publish` - Then select 1.
 
-if you are using laravel8 you should put this in  User.php in Models directory
+#### Laravel 8 
+Put this in `User.php` in Models directory
 
-use Spatie\Permission\Traits\HasRoles;
+`use Spatie\Permission\Traits\HasRoles;`
 
-in User class:
-use HasFactory, Notifiable, HasRoles;
+In User class:
+`use HasFactory, Notifiable, HasRoles;`
 
-add level to fillable fields
+Add `level` to `fillable` fields.
 
-chang locale to fa in config/app.php
+Chang locale to `fa` in `config/app.php`
 
-if you are using laravel7 change composer.json autoload section like below
+Change `composer.json` autoload section like below"
+```
+   "autoload": {
+           "psr-4": {
+               "App\\": "app/",
+               "Database\\Factories\\": "database/factories/",
+               "Database\\Seeders\\": "database/seeders/"
+           },
+   		"files": [ "app/Tools/helpers.php" ]
+       }   
+ ```
+ 
+#### Laravel 7 
 
+Change `composer.json` autoload section like below
+```
    "autoload": {
         "psr-4": {
             "App\\": "app/"
@@ -32,22 +48,11 @@ if you are using laravel7 change composer.json autoload section like below
             "app/Tools/helpers.php"
         ]
     }
-    
-if you are using laravel8 change composer.json autoload section like below
+```
+Run: `composer dump-autoload`
 
-   "autoload": {
-           "psr-4": {
-               "App\\": "app/",
-               "Database\\Factories\\": "database/factories/",
-               "Database\\Seeders\\": "database/seeders/"
-           },
-   		"files": [ "app/Tools/helpers.php" ]
-       }   
-    
-run composer dump-autoload
-
-if you are using laravel7 change user provider model in auth.php in config directory like below
-
+Change user provider model in `auth.php` in config directory like below:
+```
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
@@ -60,24 +65,24 @@ if you are using laravel7 change user provider model in auth.php in config direc
         // ],
     ],
     
-    
-add these seeders call in DatabaseSeeder.php
-
+ ```   
+Add these seeders call in `DatabaseSeeder.php`:
+```
 	$this->call(Panel_UserSeeder::class);
 	$this->call(Panel_MenuSeeder::class);
 	$this->call(Panel_PermissionSeeder::class);
-	
-php artisan migrate:fresh --seed
+```
+
+- `php artisan migrate:fresh --seed`
   
+- `php artisan serve`
 
-php artisan serve
+Go to `127.0.0.1:8000/panel/login`
 
-go to 127.0.0.1:8000/panel/login
+Email: `admin@gmail.com`
+Password: `123456`
 
-email: admin@gmail.com
-password: 123456
-
-enjoy it.
+Enjoy it.
 
 You can see login page below
 
