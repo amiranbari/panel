@@ -50,8 +50,9 @@ Change user provider model in `auth.php` in config directory like below:
  ```   
 Add these seeders call in `DatabaseSeeder.php`:
 ```
-	$this->call(UserSeeder::class);
-	$this->call(PermissionSeeder::class);
+	$this->call(Panel_MenuSeeder::class);
+	$this->call(Panel_PermissionSeeder::class);
+	$this->call(Panel_UserSeeder::class);
 ```
 
 - `php artisan migrate --seed`
