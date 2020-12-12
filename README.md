@@ -30,25 +30,7 @@ Change `composer.json` autoload section like below"
    		"files": [ "app/Tools/helpers.php" ]
        }   
  ```
- 
-#### Laravel 7 
 
-Change `composer.json` autoload section like below
-```
-   "autoload": {
-        "psr-4": {
-            "App\\": "app/"
-        },
-        "classmap": [
-            "database/seeds",
-            "database/factories",
-            "app/Models/"
-        ],
-        "files": [
-            "app/Tools/helpers.php"
-        ]
-    }
-```
 Run: `composer dump-autoload`
 
 Change user provider model in `auth.php` in config directory like below:
@@ -68,9 +50,8 @@ Change user provider model in `auth.php` in config directory like below:
  ```   
 Add these seeders call in `DatabaseSeeder.php`:
 ```
-	$this->call(Panel_UserSeeder::class);
-	$this->call(Panel_MenuSeeder::class);
-	$this->call(Panel_PermissionSeeder::class);
+	$this->call(UserSeeder::class);
+	$this->call(PermissionSeeder::class);
 ```
 
 - `php artisan migrate --seed`
@@ -80,18 +61,6 @@ Add these seeders call in `DatabaseSeeder.php`:
 Go to `127.0.0.1:8000/panel/login`
 
 Email: `admin@gmail.com`
-Password: `123456`
+Password: `12345678`
 
 Enjoy it.
-
-You can see login page below
-
-![alt text](https://github.com/amiranbari/panel/blob/master/images/login.png?raw=true)
-
-You can see Dashboard page below
-
-![alt text](https://github.com/amiranbari/panel/blob/master/images/index.png?raw=true)
-
-You can see Dynamic menu page below
-
-![alt text](https://github.com/amiranbari/panel/blob/master/images/menu.png?raw=true)
