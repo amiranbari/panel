@@ -62,6 +62,6 @@ Add these seeders call in `DatabaseSeeder.php`:
 Go to `127.0.0.1:8000/panel/login`
 
 Email: `admin@gmail.com`
-Password: `12345678`
+Password: `123456`
 
 Enjoy it.
